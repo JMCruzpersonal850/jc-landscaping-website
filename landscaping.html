@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landscaping &amp; Bush Trimming in Pensacola, FL | JC Landscaping Professionals</title>
+<meta name="description" content="Landscaping and bush trimming in Pensacola, FL — hedge shaping, bed cleanouts, and mulch. Free estimates. Call JC Landscaping Professionals at (850) 480-1332.">
+<style>
+  :root { --green: #10b981; --green-dark: #0b7a56; --ink: #1a2e25; --muted: #5b6f65; --bg: #f6faf8; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  header { background: #fff; border-bottom: 1px solid #e5efe9; position: sticky; top: 0; z-index: 50; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; max-width: 1140px; margin: 0 auto; gap: 16px; }
+  .brand img { height: 84px; width: auto; display: block; }
+  .menu { display: flex; align-items: center; gap: 26px; }
+  .menu > a, .dropbtn { color: var(--ink); font-weight: 600; font-size: 16px; text-decoration: none; background: none; border: 0; cursor: pointer; font-family: inherit; padding: 10px 0; }
+  .menu > a:hover, .dropbtn:hover { color: var(--green-dark); }
+  .dropdown { position: relative; }
+  .drop-panel { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #e5efe9; border-radius: 12px; box-shadow: 0 14px 40px rgba(12,43,31,.12); min-width: 320px; padding: 8px; }
+  .dropdown:hover .drop-panel, .dropdown:focus-within .drop-panel { display: block; }
+  .drop-panel a { display: block; padding: 11px 14px; border-radius: 8px; color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 600; }
+  .drop-panel a:hover { background: #ecfdf5; color: var(--green-dark); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+  .burger { display: none; background: none; border: 1px solid #e5efe9; border-radius: 10px; font-size: 22px; line-height: 1; padding: 9px 13px; cursor: pointer; color: var(--ink); }
+  .btn { display: inline-block; background: var(--green); color: #fff; font-weight: 700; padding: 13px 28px; border-radius: 10px; text-decoration: none; font-size: 17px; border: none; cursor: pointer; }
+  .btn:hover { background: var(--green-dark); }
+  .btn-outline { background: transparent; color: var(--green-dark); border: 2px solid var(--green); }
+  .btn-outline:hover { background: var(--green); color: #fff; }
+  .btn-call { white-space: nowrap; padding: 11px 20px; font-size: 16px; }
+  .hero { background: linear-gradient(rgba(10,40,28,.72), rgba(10,40,28,.55)), url('landscaping.jpg') center/cover; color: #fff; padding: 110px 0 96px; text-align: center; }
+  .hero .eyebrow { letter-spacing: 3px; font-size: 13px; font-weight: 700; color: #a7f3d0; margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(32px, 6vw, 54px); line-height: 1.15; margin-bottom: 16px; }
+  .hero p { font-size: 18px; color: #d1fae5; max-width: 640px; margin: 0 auto 28px; }
+  .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .hero .btn-outline { color: #fff; border-color: #fff; }
+  .hero .btn-outline:hover { background: #fff; color: var(--green-dark); }
+  .crumbs { background: #fff; border-bottom: 1px solid #e5efe9; padding: 12px 0; font-size: 14px; color: var(--muted); }
+  .crumbs a { color: var(--green-dark); text-decoration: none; font-weight: 600; }
+  section { padding: 64px 0; }
+  h2 { font-size: clamp(26px, 4vw, 36px); text-align: center; margin-bottom: 10px; }
+  .sub { text-align: center; color: var(--muted); max-width: 620px; margin: 0 auto 36px; font-size: 17px; }
+  .split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
+  .split img { width: 100%; border-radius: 16px; border: 1px solid #e5efe9; display: block; }
+  .split h2 { text-align: left; margin-bottom: 18px; }
+  .check { list-style: none; }
+  .check li { padding: 9px 0 9px 36px; position: relative; font-size: 16.5px; }
+  .check li::before { content: "✓"; position: absolute; left: 0; top: 10px; color: #fff; background: var(--green); width: 24px; height: 24px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 800; }
+  .about { background: #fff; border-top: 1px solid #e5efe9; border-bottom: 1px solid #e5efe9; }
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 18px; text-align: left; }
+  .step { background: var(--bg); border: 1px solid #e5efe9; border-radius: 14px; padding: 24px 20px; }
+  .step .n { width: 38px; height: 38px; border-radius: 50%; background: var(--green); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; font-size: 18px; }
+  .step h3 { font-size: 17px; margin-bottom: 6px; color: var(--green-dark); }
+  .step p { color: var(--muted); font-size: 15px; }
+  .faq details { background: #fff; border: 1px solid #e5efe9; border-radius: 12px; padding: 16px 20px; margin-bottom: 12px; }
+  .faq summary { font-weight: 700; cursor: pointer; color: var(--green-dark); font-size: 17px; }
+  .faq p { color: var(--muted); margin-top: 8px; font-size: 16px; }
+  .call-band { background: var(--green-dark); color: #fff; text-align: center; padding: 48px 20px; }
+  .call-band h2 { margin-bottom: 8px; }
+  .call-band p { color: #d1fae5; margin-bottom: 22px; font-size: 17px; }
+  .call-band .btn { background: #fff; color: var(--green-dark); font-size: 20px; padding: 15px 40px; }
+  .call-band .btn:hover { background: #ecfdf5; }
+  footer { background: #0c2b1f; color: #a7f3d0; text-align: center; padding: 32px 20px; font-size: 14px; }
+  footer a { color: #fff; text-decoration: none; font-weight: 700; }
+  .flinks { margin-top: 10px; font-size: 14px; line-height: 2; }
+  .flinks a { color: #a7f3d0; font-weight: 600; margin: 0 6px; }
+  @media (max-width: 900px) {
+    .burger { display: block; }
+    .brand img { height: 64px; }
+    .menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid #e5efe9; box-shadow: 0 18px 40px rgba(12,43,31,.10); flex-direction: column; align-items: stretch; gap: 0; padding: 8px 20px 16px; }
+    header.open .menu { display: flex; }
+    .menu > a, .dropbtn { text-align: left; width: 100%; padding: 13px 4px; border-top: 1px solid #f0f5f2; font-size: 17px; }
+    .dropdown .drop-panel { display: none; position: static; transform: none; box-shadow: none; border: 0; border-radius: 0; padding: 0 0 4px 14px; min-width: 0; }
+    .dropdown.open .drop-panel { display: block; }
+    .btn-call { padding: 10px 14px; font-size: 14px; }
+  }
+  @media (max-width: 760px) { .split { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="index.html"><img src="logo.jpg" alt="JC Landscaping Professionals"></a>
+    <nav class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn" type="button">Services ▾</button>
+        <div class="drop-panel">
+          <a href="sod-installation.html">Sod Installation</a>
+          <a href="irrigation.html">Irrigation Installation &amp; Maintenance</a>
+          <a href="lawn-care.html">Lawn Care — Residential &amp; Commercial</a>
+          <a href="privacy-fencing.html">Wood Privacy Fencing</a>
+          <a href="landscaping.html">Landscaping &amp; Bush Trimming</a>
+          <a href="flower-beds.html">Flower Bed Installation &amp; Maintenance</a>
+        </div>
+      </div>
+      <a href="index.html#estimate">Free Estimate</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-call" href="tel:+18504801332">Call (850) 480-1332</a>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <div class="eyebrow">PENSACOLA, FLORIDA</div>
+    <h1>Landscaping &amp; Bush Trimming</h1>
+    <p>Overgrown hedges, shaggy beds, tired curb appeal — we shape it up, clean it out, and keep it looking sharp.</p>
+    <div class="hero-ctas">
+      <a class="btn" href="tel:+18504801332">Call (850) 480-1332</a>
+      <a class="btn btn-outline" href="index.html#estimate">Get a Free Estimate</a>
+    </div>
+  </div>
+</div>
+
+<div class="crumbs"><div class="wrap"><a href="index.html">Home</a> / Services / <span>Landscaping &amp; Bush Trimming</span></div></div>
+
+<section>
+  <div class="wrap split">
+    <img src="landscaping.jpg" alt="Landscaper trimming a tall hedge">
+    <div>
+      <h2>What's included</h2>
+      <ul class="check">
+        <li>Hedge and shrub trimming and shaping</li>
+        <li>Overgrown shrub cutback and reshaping</li>
+        <li>Bed cleanouts and debris removal</li>
+        <li>Mulch refresh for a finished look</li>
+        <li>Small planting and bed installs</li>
+        <li>One-time cleanups or recurring upkeep</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Simple from first call to sharp hedges.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Reach out</h3><p>Call or send the estimate form and tell us what you need.</p></div>
+      <div class="step"><div class="n">2</div><h3>Free on-site estimate</h3><p>We come look at the property and give you a straight price.</p></div>
+      <div class="step"><div class="n">3</div><h3>We do the work</h3><p>We show up on time, do it right, and clean up after ourselves.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap" style="max-width:760px">
+    <h2>Good to know</h2>
+    <p class="sub">Straight answers before you call.</p>
+    <details><summary>Can you save my overgrown bushes?</summary><p>Usually, yes — most overgrown shrubs can be cut back and reshaped. We'll be straight with you about what will bounce back and what won't.</p></details>
+    <details><summary>When's the best time to trim?</summary><p>It depends on the plant. We trim for both health and shape, and we'll tell you if something is better left until a different season.</p></details>
+    <details><summary>Do you offer regular upkeep?</summary><p>Yes — set up recurring visits and your hedges and beds stay sharp without you thinking about it.</p></details>
+  </div>
+</section>
+
+<div class="call-band">
+  <h2>Hedges taking over?</h2>
+  <p>Talk to a real person about your project today.</p>
+  <a class="btn" href="tel:+18504801332">Call (850) 480-1332</a>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p><strong style="color:#fff">JC Landscaping Professionals</strong> · Pensacola, FL</p>
+    <p class="flinks">
+      <a href="sod-installation.html">Sod Installation</a>
+      <a href="irrigation.html">Irrigation</a>
+      <a href="lawn-care.html">Lawn Care</a>
+      <a href="privacy-fencing.html">Wood Fencing</a>
+      <a href="landscaping.html">Landscaping</a>
+      <a href="flower-beds.html">Flower Beds</a>
+    </p>
+    <p style="margin-top:8px"><a href="tel:+18504801332">(850) 480-1332</a></p>
+    <p style="margin-top:8px; opacity:.7">© 2026 JC Landscaping Professionals. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var header = document.querySelector('header');
+    var burger = document.getElementById('burger');
+    burger.addEventListener('click', function () { header.classList.toggle('open'); });
+    document.querySelectorAll('.dropbtn').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (window.innerWidth <= 900) b.parentElement.classList.toggle('open');
+      });
+    });
+    document.querySelectorAll('.menu a').forEach(function (a) {
+      a.addEventListener('click', function () { header.classList.remove('open'); });
+    });
+  })();
+</script>
+</body>
+</html>
