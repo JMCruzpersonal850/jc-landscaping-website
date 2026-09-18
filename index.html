@@ -11,8 +11,18 @@
   body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--ink); background: var(--bg); line-height: 1.6; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
   header { background: #fff; border-bottom: 1px solid #e5efe9; position: sticky; top: 0; z-index: 50; }
-  .nav { display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; max-width: 1080px; margin: 0 auto; }
-  .nav img { height: 52px; width: auto; }
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; max-width: 1140px; margin: 0 auto; gap: 16px; }
+  .brand img { height: 84px; width: auto; display: block; }
+  .menu { display: flex; align-items: center; gap: 26px; }
+  .menu > a, .dropbtn { color: var(--ink); font-weight: 600; font-size: 16px; text-decoration: none; background: none; border: 0; cursor: pointer; font-family: inherit; padding: 10px 0; }
+  .menu > a:hover, .dropbtn:hover { color: var(--green-dark); }
+  .dropdown { position: relative; }
+  .drop-panel { display: none; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #e5efe9; border-radius: 12px; box-shadow: 0 14px 40px rgba(12,43,31,.12); min-width: 320px; padding: 8px; }
+  .dropdown:hover .drop-panel, .dropdown:focus-within .drop-panel { display: block; }
+  .drop-panel a { display: block; padding: 11px 14px; border-radius: 8px; color: var(--ink); text-decoration: none; font-size: 15px; font-weight: 600; }
+  .drop-panel a:hover { background: #ecfdf5; color: var(--green-dark); }
+  .nav-right { display: flex; align-items: center; gap: 10px; }
+  .burger { display: none; background: none; border: 1px solid #e5efe9; border-radius: 10px; font-size: 22px; line-height: 1; padding: 9px 13px; cursor: pointer; color: var(--ink); }
   .btn { display: inline-block; background: var(--green); color: #fff; font-weight: 700; padding: 13px 28px; border-radius: 10px; text-decoration: none; font-size: 17px; border: none; cursor: pointer; }
   .btn:hover { background: var(--green-dark); }
   .btn-outline { background: transparent; color: var(--green-dark); border: 2px solid var(--green); }
@@ -28,13 +38,19 @@
   .strip { background: #fff; border-bottom: 1px solid #e5efe9; padding: 18px 0; }
   .strip .wrap { display: flex; gap: 26px; justify-content: center; flex-wrap: wrap; font-weight: 600; color: var(--muted); font-size: 15px; }
   .strip span::before { content: "✓ "; color: var(--green); font-weight: 800; }
-  section { padding: 64px 0; }
+  section { padding: 64px 0; scroll-margin-top: 110px; }
   h2 { font-size: clamp(26px, 4vw, 36px); text-align: center; margin-bottom: 10px; }
   .sub { text-align: center; color: var(--muted); max-width: 620px; margin: 0 auto 36px; font-size: 17px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
-  .card { background: #fff; border: 1px solid #e5efe9; border-radius: 14px; padding: 26px 22px; }
-  .card h3 { font-size: 18px; margin-bottom: 8px; color: var(--green-dark); }
-  .card p { color: var(--muted); font-size: 15px; }
+  .svc-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+  .svc { background: #fff; border: 1px solid #e5efe9; border-radius: 16px; overflow: hidden; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: transform .15s ease, box-shadow .15s ease; }
+  .svc:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(16,185,129,.14); }
+  .svc img { width: 100%; height: 190px; object-fit: cover; display: block; }
+  .svc-body { padding: 20px 22px 22px; }
+  .svc h3 { font-size: 19px; margin-bottom: 8px; color: var(--green-dark); }
+  .svc p { color: var(--muted); font-size: 15px; margin-bottom: 12px; }
+  .svc .more { color: var(--green-dark); font-weight: 700; font-size: 15px; }
+  .also { text-align: center; color: var(--muted); margin-top: 24px; font-size: 16px; }
+  .also a { color: var(--green-dark); font-weight: 700; }
   .about { background: #fff; border-top: 1px solid #e5efe9; border-bottom: 1px solid #e5efe9; }
   .about .wrap { max-width: 760px; text-align: center; }
   .about p { color: var(--muted); font-size: 17px; }
@@ -52,15 +68,44 @@
   .gallery figcaption { padding: 12px 16px; font-weight: 600; font-size: 15px; color: var(--green-dark); }
   footer { background: #0c2b1f; color: #a7f3d0; text-align: center; padding: 32px 20px; font-size: 14px; }
   footer a { color: #fff; text-decoration: none; font-weight: 700; }
-  @media (max-width: 560px) { .btn-call { padding: 10px 14px; font-size: 14px; } .nav img { height: 44px; } }
+  .flinks { margin-top: 10px; font-size: 14px; line-height: 2; }
+  .flinks a { color: #a7f3d0; font-weight: 600; margin: 0 6px; }
+  @media (max-width: 900px) {
+    .burger { display: block; }
+    .brand img { height: 64px; }
+    .menu { display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border-bottom: 1px solid #e5efe9; box-shadow: 0 18px 40px rgba(12,43,31,.10); flex-direction: column; align-items: stretch; gap: 0; padding: 8px 20px 16px; }
+    header.open .menu { display: flex; }
+    .menu > a, .dropbtn { text-align: left; width: 100%; padding: 13px 4px; border-top: 1px solid #f0f5f2; font-size: 17px; }
+    .dropdown .drop-panel { display: none; position: static; transform: none; box-shadow: none; border: 0; border-radius: 0; padding: 0 0 4px 14px; min-width: 0; }
+    .dropdown.open .drop-panel { display: block; }
+    .btn-call { padding: 10px 14px; font-size: 14px; }
+  }
 </style>
 </head>
 <body>
 
 <header>
   <div class="nav">
-    <img src="logo.jpg" alt="JC Landscaping Professionals">
-    <a class="btn btn-call" href="tel:+18504801332">Call (850) 480-1332</a>
+    <a class="brand" href="index.html"><img src="logo.jpg" alt="JC Landscaping Professionals"></a>
+    <nav class="menu" id="menu">
+      <a href="index.html">Home</a>
+      <div class="dropdown">
+        <button class="dropbtn" type="button">Services ▾</button>
+        <div class="drop-panel">
+          <a href="sod-installation.html">Sod Installation</a>
+          <a href="irrigation.html">Irrigation Installation &amp; Maintenance</a>
+          <a href="lawn-care.html">Lawn Care — Residential &amp; Commercial</a>
+          <a href="privacy-fencing.html">Wood Privacy Fencing</a>
+          <a href="landscaping.html">Landscaping &amp; Bush Trimming</a>
+          <a href="flower-beds.html">Flower Bed Installation &amp; Maintenance</a>
+        </div>
+      </div>
+      <a href="#estimate">Free Estimate</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-call" href="tel:+18504801332">Call (850) 480-1332</a>
+      <button class="burger" id="burger" aria-label="Menu">☰</button>
+    </div>
   </div>
 </header>
 
@@ -88,14 +133,33 @@
   <div class="wrap">
     <h2>Our Services</h2>
     <p class="sub">Residential &amp; commercial landscaping, built around what your property actually needs.</p>
-    <div class="grid">
-      <div class="card"><h3>Lawn Maintenance</h3><p>Routine mowing, trimming, edging and cleanup to keep your yard sharp year-round.</p></div>
-      <div class="card"><h3>Sod Installation</h3><p>Fresh, healthy sod installed right — for new lawns or patching worn-out spots.</p></div>
-      <div class="card"><h3>Pavers &amp; Hardscaping</h3><p>Walkways, patios, and retaining walls in brick, flagstone and pavers.</p></div>
-      <div class="card"><h3>Mulch &amp; Flower Beds</h3><p>Fresh mulch, new plantings and bed design for instant curb appeal.</p></div>
-      <div class="card"><h3>Pressure Washing</h3><p>Driveways, siding, fences and hardscapes washed clean.</p></div>
-      <div class="card"><h3>Commercial Properties</h3><p>Grounds maintenance and landscape care for offices, retail and HOAs.</p></div>
+    <div class="svc-grid">
+      <a class="svc" href="sod-installation.html">
+        <img src="sod.jpg" alt="Freshly installed sod lawn">
+        <div class="svc-body"><h3>Sod Installation</h3><p>Fresh, healthy sod installed right — for new lawns or patching worn-out spots.</p><span class="more">Learn more →</span></div>
+      </a>
+      <a class="svc" href="irrigation.html">
+        <img src="irrigation.jpg" alt="Technician installing a lawn sprinkler head">
+        <div class="svc-body"><h3>Irrigation Installation &amp; Maintenance</h3><p>Sprinkler systems designed for your yard — installed, repaired, and tuned up.</p><span class="more">Learn more →</span></div>
+      </a>
+      <a class="svc" href="lawn-care.html">
+        <img src="lawn-care.jpg" alt="Crew member mowing clean stripes into a large lawn">
+        <div class="svc-body"><h3>Lawn Care — Residential &amp; Commercial</h3><p>Routine mowing, edging, and cleanup — for your home or your whole property.</p><span class="more">Learn more →</span></div>
+      </a>
+      <a class="svc" href="privacy-fencing.html">
+        <img src="fencing.jpg" alt="New wood privacy fence along a backyard">
+        <div class="svc-body"><h3>Wood Privacy Fencing</h3><p>Sturdy wood privacy fences with gates — built to stand up to Florida weather.</p><span class="more">Learn more →</span></div>
+      </a>
+      <a class="svc" href="landscaping.html">
+        <img src="landscaping.jpg" alt="Landscaper trimming a tall hedge">
+        <div class="svc-body"><h3>Landscaping &amp; Bush Trimming</h3><p>Hedge shaping, bed cleanouts, and mulch that brings curb appeal back.</p><span class="more">Learn more →</span></div>
+      </a>
+      <a class="svc" href="flower-beds.html">
+        <img src="flowerbed.jpg" alt="Flower bed makeover with fresh mulch">
+        <div class="svc-body"><h3>Flower Bed Installation &amp; Maintenance</h3><p>New beds designed and planted, or tired beds brought back to life.</p><span class="more">Learn more →</span></div>
+      </a>
     </div>
+    <p class="also">Also available: pavers &amp; hardscaping and pressure washing — <a href="#estimate">mention it in your free estimate</a>.</p>
   </div>
 </section>
 
@@ -138,12 +202,34 @@
 <footer>
   <div class="wrap">
     <p><strong style="color:#fff">JC Landscaping Professionals</strong> · Pensacola, FL</p>
+    <p class="flinks">
+      <a href="sod-installation.html">Sod Installation</a>
+      <a href="irrigation.html">Irrigation</a>
+      <a href="lawn-care.html">Lawn Care</a>
+      <a href="privacy-fencing.html">Wood Fencing</a>
+      <a href="landscaping.html">Landscaping</a>
+      <a href="flower-beds.html">Flower Beds</a>
+    </p>
     <p style="margin-top:8px"><a href="tel:+18504801332">(850) 480-1332</a></p>
     <p style="margin-top:8px; opacity:.7">© 2026 JC Landscaping Professionals. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
+  // Mobile menu + Services dropdown
+  (function () {
+    var header = document.querySelector('header');
+    var burger = document.getElementById('burger');
+    burger.addEventListener('click', function () { header.classList.toggle('open'); });
+    document.querySelectorAll('.dropbtn').forEach(function (b) {
+      b.addEventListener('click', function () {
+        if (window.innerWidth <= 900) b.parentElement.classList.toggle('open');
+      });
+    });
+    document.querySelectorAll('.menu a').forEach(function (a) {
+      a.addEventListener('click', function () { header.classList.remove('open'); });
+    });
+  })();
   // Auto-resize the LeadControl form iframe
   (function () {
     var f = document.getElementById('lcf-new-jc-landscaping');
